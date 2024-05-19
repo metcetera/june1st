@@ -83,7 +83,7 @@ img {
     content: '\2713'; /* Checkmark Unicode character */
     color: #ff8c00;
     font-size: 30px;
-    text-align: center;
+    text-align: right;
     line-height: 22px;
 }
 .button-container {
