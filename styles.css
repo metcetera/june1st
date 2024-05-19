@@ -91,6 +91,14 @@ img {
     right: 20px;
     animation: buttonAnimate 2s ease infinite alternate;
 }
+@keyframes buttonAnimate {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
 .button {
     color: rgb(252, 235, 206);
     padding: 10px 20px;
@@ -113,6 +121,6 @@ img {
         background-position: 100% 50%;
     }
 }
-.button:hover {
+.button-container .button:hover {
     transform: scale(1.05);
 }
