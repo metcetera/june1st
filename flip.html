@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feessie 1 juni</title>
+
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
-            background: linear-gradient(60deg, #3a6a9b, #926124, #4b4b4b, #d57a18, #34495e, #6a4242);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(60deg, #2c3e50, #34495e, #4b4b4b, #2c3e50, #34495e, #4b4b4b);
             background-size: 300% 300%;
             animation: gradientBG 10s ease infinite;
         }
@@ -25,18 +28,39 @@
                 background-position: 0% 50%;
             }
         }
-        .container {
+        .flip-container {
+            perspective: 1000px;
+        }
+        .flip-card {
+            width: 300px;
+            height: 400px;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .flip-card img, .flip-card .text {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%;
         }
-        img {
-            max-width: 100%;
-            max-height: 100%;
+        .flip-card img {
+            transform: rotateY(0deg);
+        }
+        .flip-card .text {
+            transform: rotateY(180deg);
+            background-color: white;
+            color: black;
+            font-size: 24px;
+        }
+        .flip-container.flipped .flip-card {
+            transform: rotateY(180deg);
         }
     </style>
-    
+
     <!-- OpenGraph Meta Tags -->
     <meta property="og:title" content="Feessie 1 juni">
     <meta property="og:site_name" content="Feessie 1 juni">
@@ -56,10 +80,20 @@
     <!-- Other Social Media Meta Tags -->
     <meta property="og:site_name" content="Feessie 1 juni">
     <meta property="og:locale" content="nl_NL">
+
 </head>
 <body>
-    <div class="container">
-        <img src="/invite.jpg" alt="Plaatje voor mijn Feessie op 1 juni">
+    <div class="flip-container" id="flip-container">
+        <div class="flip-card">
+            <img src="/invite.jpg" alt="Invite Image">
+            <div class="text">Invitation Details</div>
+        </div>
     </div>
+
+    <script>
+        document.getElementById('flip-container').addEventListener('click', function() {
+            this.classList.toggle('flipped');
+        });
+    </script>
 </body>
 </html>
