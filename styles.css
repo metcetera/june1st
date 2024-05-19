@@ -7,7 +7,7 @@ body, html {
     background-size: 300% 300%;
     animation: gradientBG 10s ease infinite;
     font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+    letter-spacing: .2px;
 }
 @keyframes gradientBG {
     0% {
