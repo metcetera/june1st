@@ -64,6 +64,10 @@ img {
     z-index: 1;
     opacity: 1;
 }
+a {
+    color: #ff8c00;
+    font-weight: bold;
+}
 .text-box {
     max-width: 500px;
     height: auto;
@@ -115,8 +119,22 @@ img {
     content: '\2713'; /* Checkmark Unicode character */
     color: #ff8c00;
     font-size: 30px;
-    text-align: right;
+    text-align: center;
     line-height: 22px;
+}
+.list-item.question:before {
+    content: '?'; /* Checkmark Unicode character */
+    color: #ff8c00;
+    font-size: 26px;
+    text-align: center;
+    line-height: 28px;
+}
+.list-item.smiley:before {
+    content: '\1F60A'; /* Smiley Unicode character */
+    color: #ff8c00;
+    font-size: 25px;
+    text-align: center;
+    line-height: 28px;
 }
 .button-container {
     position: absolute;
